@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1= title
+  div 
+    span Position:
+    input(type="text", name="position", value=`${form.position}`)
+  div 
+    span First Name:
+    input(type="text", name="firstName", value=`${form.firstName}`)
+  div 
+    span Last Name:
+    input(type="text", name="lastName", value=`${form.lastName}`)
