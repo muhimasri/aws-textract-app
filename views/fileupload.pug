@@ -4,10 +4,13 @@ block content
   h1= title
   div 
     span Position:
-    input(type="text", name="position", value=`${form.position}`)
+    input(type="text", name="position", value=`${formData['Position']}`)
   div 
     span First Name:
-    input(type="text", name="firstName", value=`${form.firstName}`)
+    input(type="text", name="firstName", value=`${formData['First Name']}`)
   div 
     span Last Name:
-    input(type="text", name="lastName", value=`${form.lastName}`)
+    input(type="text", name="lastName", value=`${formData['Last Name']}`)
+  div 
+    span Address:
+    input(type="text", name="address", value=`${formData['Address']}`)

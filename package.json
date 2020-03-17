@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "aws-sdk": "^2.606.0",
+    "aws-textract-helper": "^1.0.0-beta.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "dotenv": "^8.2.0",

@@ -3,6 +3,7 @@ const router = express.Router()
 const formidable = require('formidable')
 const AWS = require('aws-sdk')
 const fs = require('fs')
+const textractHelper = require('aws-textract-helper')
 require('dotenv').config()
 
 /* GET home page. */
@@ -12,7 +13,6 @@ router.get('/', (req, res, next) => {
 
 router.post('/fileupload', (req, res, next) => {
   // Upload logic
-  res.render('fileupload', { title: 'Upload Results', form: {} })
   const form = new formidable.IncomingForm()
   form.parse(req, async (err, fields, files) => {
     if (err) {
@@ -27,7 +27,10 @@ router.post('/fileupload', (req, res, next) => {
       ACL: 'public-read'
     }
     const s3Content = await s3Upload(s3Params)
-    const data = await documentExtract(s3Content.Key)
+    const textractData = await documentExtract(s3Content.Key)
+
+    const formData = textractHelper.createForm(textractData, { trimChars: [':', ' '] })
+    res.render('fileupload', { title: 'Upload Results', formData })
   })
 })
 
