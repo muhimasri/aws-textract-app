@@ -1,4 +1,4 @@
-# aws-textract-app
+# AWS Textract App
 Convert an image to an HTML form using Amazon Textract and NodeJS
 
 # Usage:
