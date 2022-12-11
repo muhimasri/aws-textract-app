@@ -6,7 +6,7 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
-    "aws-sdk": "^2.606.0",
+    "aws-sdk": "^2.814.0",
     "aws-textract-helper": "^1.0.0-beta.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
